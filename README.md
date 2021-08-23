@@ -55,7 +55,7 @@ TBD
 TBD
 
 ## Event Storming 결과
-TBD
+* MSAEz 로 모델링한 이벤트스토밍 결과:  http://msaez.io/#/storming/
 
 
 ### 이벤트 도출
