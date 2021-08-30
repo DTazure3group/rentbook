@@ -1,6 +1,5 @@
 # 3 Team Project
-![image](https://user-images.githubusercontent.com/89369983/130455645-9d20fb95-3d2e-4a72-9366-8c9d1cd94bd9.png)
-## 동네 슈퍼마켓 온라인 주문 시스템   
+## 도서 대여관리 시스템   
 
 # Table of contents
 
