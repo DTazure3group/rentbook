@@ -55,10 +55,10 @@ B. 매장 & 서적
 
 
 ## AS-IS 조직 (Horizontally-Aligned)
-TBD
+![asis](https://user-images.githubusercontent.com/89369983/132091689-4094136c-c6fa-477e-b614-b478eed1fa0f.PNG)
 
 ## TO-BE 조직 (Vertically-Aligned)
-TBD
+![tobe](https://user-images.githubusercontent.com/89369983/132091699-2f0f9164-55da-49d5-a35f-dc6eba7eed19.PNG)
 
 ## Event Storming 결과
 * MSAEz 로 모델링한 이벤트스토밍 결과:  http://msaez.io/#/storming/
