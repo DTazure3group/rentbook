@@ -65,7 +65,8 @@ B. 매장 & 서적
 
 
 ### 이벤트 도출
-TBD
+![Event 도출](https://user-images.githubusercontent.com/33479996/132121070-a56d6e5a-d292-4e3d-8118-05c0b602e945.PNG)
+
 
 ### 부적격 이벤트 탈락
 TBD
