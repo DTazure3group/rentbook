@@ -65,40 +65,58 @@ B. 매장 & 서적
 
 
 ### 이벤트 도출
-TBD
+![Event 도출](https://user-images.githubusercontent.com/33479996/132121382-def164d6-8298-481e-ab99-3a689ee63d78.PNG)
+
 
 ### 부적격 이벤트 탈락
-TBD
+![부적격 Event 탈락](https://user-images.githubusercontent.com/33479996/132121313-5f469a3f-fa93-4aa9-9975-bc29caed3a5c.PNG)
 
+```
+- 이벤트를 식별하여 타임라인으로 배치하고 중복되거나 잘못된 도메인 이벤트들을 걸러내는 작업을 수행함
+- 현업이 사용하는 용어를 그대로 사용(Ubiquitous Language) 
+```
 
 ### 액터, 커맨드 부착하여 읽기 좋게
-TBD
+![액터, 커맨드 부착](https://user-images.githubusercontent.com/33479996/132121408-432a1cde-8ef0-409c-8164-7f9474113563.PNG)
+
+```
+- Event를 발생시키는 Command와 Command를 발생시키는주체, 담당자 또는 시스템을 식별함 
+- Command : 도서등록, 도서삭제, 도서대여, 도서반납, 반납일설정, 반납일지연, 도서상태변경, 결제, 적립금잔액부족, 알림
+- Actor : 점주, 고객, 시스템
+```
 
 ### 어그리게잇으로 묶기
-TBD
+![어그리게잇으로 묶기](https://user-images.githubusercontent.com/33479996/132121475-87c70ba1-804e-4ca9-9bdb-95a0f48bb259.PNG)
 
-
+```
+- 연관있는 도메인 이벤트들을 Aggregate 로 묶었음 
+- Aggregate : 도서관리, 대여관리, 결제이력, 알림이력
+```
 
 ### 바운디드 컨텍스트로 묶기
-
-TBD
-
+![바운디드 컨텍스트로 묶기](https://user-images.githubusercontent.com/33479996/132121515-278dd55d-5242-460b-8907-57bfcdb99152.PNG)
 
 
 ### 폴리시 부착 (괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남)
+![폴리시 부착](https://user-images.githubusercontent.com/33479996/132121531-a416f6c5-9cf9-441f-87c4-121d262bdcd3.PNG)
 
-TBD
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
+![폴리시의 이동과 컨텍스트 매핑](https://user-images.githubusercontent.com/33479996/132121546-709056ea-5627-470b-b614-8fcd5f87532c.PNG)
 
-TBD
+```
+- Policy의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Res)
+```
 
 ### 완성된 1차 모형
+![완성된 1차 모형](https://user-images.githubusercontent.com/33479996/132121561-15a58cc6-bab7-4073-9eab-5ce4c53d3d90.PNG)
 
-TBD
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
-TBD
+![기능적 요구사항 커버](https://user-images.githubusercontent.com/33479996/132121591-01e22c23-c3af-4797-87e3-331820341a9e.PNG)
+![기능적 요구사항 커버2](https://user-images.githubusercontent.com/33479996/132121612-07f66cce-fab2-472b-9473-020ca0b5bca5.PNG)
+![비기능적 요구사항 커버](https://user-images.githubusercontent.com/33479996/132121621-f2bca356-7860-4fcf-867e-5430ae46404b.PNG)
+
 
 ### 모델 수정
 
