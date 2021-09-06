@@ -62,52 +62,43 @@ B. 도서관리
 ![tobe](https://user-images.githubusercontent.com/89369983/132091699-2f0f9164-55da-49d5-a35f-dc6eba7eed19.PNG)
 
 ## Event Storming 결과
-* MSAEz 로 모델링한 이벤트스토밍 결과:  http://msaez.io/#/storming/
+* MSAEz 로 모델링한 이벤트스토밍 결과:  http://www.msaez.io/#/storming/CWH9U9ZXJmRVhWyyz88s1h12bLz1/2d59a42bf5bfa04dfeb58737179ef00f
 
 
 ### 이벤트 도출
-TBD
+![event도출](https://user-images.githubusercontent.com/89369983/132147821-4215c854-1ad3-4403-ab5a-6507db392833.PNG)
 
 ### 부적격 이벤트 탈락
-TBD
+![부적격event](https://user-images.githubusercontent.com/89369983/132147826-22815443-4fe5-49a9-b6ef-e40de68135e4.PNG)
 
 
 ### 액터, 커맨드 부착하여 읽기 좋게
-TBD
+![action](https://user-images.githubusercontent.com/89369983/132147829-6eafb506-a812-467d-879d-251d62374b7e.PNG)
 
 ### 어그리게잇으로 묶기
-TBD
-
-
+![aggregate](https://user-images.githubusercontent.com/89369983/132147833-9472777f-5d02-42fe-9a65-a0d9e511f332.PNG)
 
 ### 바운디드 컨텍스트로 묶기
-
-TBD
-
-
+![boundedct](https://user-images.githubusercontent.com/89369983/132147838-6f1daa46-972c-4039-824b-e26ead7d9ed4.PNG)
 
 ### 폴리시 부착 (괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남)
-
-TBD
+![policy](https://user-images.githubusercontent.com/89369983/132147844-a3fef6f5-f7c0-4659-84f9-c01b0f616261.PNG)
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
-
-TBD
+![policy_ct](https://user-images.githubusercontent.com/89369983/132147847-f73fe720-d99d-47b9-9288-b0ebb09743fe.PNG)
 
 ### 완성된 1차 모형
-
-TBD
+![complete](https://user-images.githubusercontent.com/89369983/132147854-216852a7-9191-4cde-ac19-a818abcdca6d.PNG)
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
-TBD
+![검증1](https://user-images.githubusercontent.com/89369983/132147856-4da33f2f-a09a-44ae-aa02-5d77b32d9fdb.PNG)
+![검증2](https://user-images.githubusercontent.com/89369983/132147861-c3a424bc-7f38-412b-a55b-3f09b6b725db.PNG)
 
 ### 모델 수정
-
 TBD
 
 ### 비기능 요구사항에 대한 검증
-
-TBD
+![비기능](https://user-images.githubusercontent.com/89369983/132147864-393eace5-f9fc-4540-9d22-1804e5407d4e.PNG)
 
 
 
