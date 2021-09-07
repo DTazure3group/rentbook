@@ -24,7 +24,7 @@ public class Alert {
         alertSent.publishAfterCommit();
 
     }
-
+    // todo
     public Long getId() {
         return id;
     }
