@@ -134,6 +134,146 @@ mvn spring-boot:run
 cd gateway
 mvn spring-boot:run 
 ```
+## DDD(Domain-Driven-Design)의 적용
+msaez Event-Storming을 통해 구현한 Aggregate 단위로 Entity 를 정의 하였으며,
+Entity Pattern 과 Repository Pattern을 적용하기 위해 Spring Data REST 의 RestRepository 를 적용하였다.
+
+Bookrental 서비스의 rental.java
+
+```java
+
+package book.rental.system;
+
+import javax.persistence.*;
+import org.springframework.beans.BeanUtils;
+import java.util.List;
+import java.util.Date;
+
+@Entity
+@Table(name="Rental_table")
+public class Rental {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long rentalId;
+    private Integer bookId;
+    private String bookName;
+    private Integer price;
+    private Date startDate;
+    private Date returnDate;
+    private Integer customerId;
+    private String customerPhoneNo;
+    private String rentStatus;
+
+    @PostPersist
+    public void onPostPersist(){
+
+        //  서적 대여 시 상태변경 후 Publish 
+        BookRented bookRented = new BookRented();
+        BeanUtils.copyProperties(this, bookRented);
+        bookRented.publishAfterCommit();
+
+    }
+
+    @PostUpdate 
+    public void onPostUpdate(){
+
+        if("RETURN".equals(this.rentStatus)){           // 반납 처리 Publish
+            BookReturned bookReturned = new BookReturned();
+            BeanUtils.copyProperties(this, bookReturned);
+            bookReturned.publishAfterCommit();
+
+        } else if("DELAY".equals(this.rentStatus)){     // 반납지연 Publish
+            ReturnDelayed returnDelayed = new ReturnDelayed();
+            BeanUtils.copyProperties(this, returnDelayed);
+            returnDelayed.publishAfterCommit();
+        }
+    }    
+
+    public Long getRentalId() {
+        return rentalId;
+    }
+
+    public void setRentalId(Long rentalId) {
+        this.rentalId = rentalId;
+    }
+    public Integer getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
+    }
+    public String getBookName() {
+        return bookName;
+    }
+    .. getter/setter Method 생략
+```
+
+ Booking 서비스의 PolicyHandler.java
+
+```java
+package anticorona;
+
+import anticorona.config.kafka.KafkaProcessor;
+
+import java.util.Optional;
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PolicyHandler{
+    
+    @Autowired BookingRepository bookingRepository;
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverCompleted_UpdateStatus(@Payload Completed completed){
+
+        if(!completed.validate()) return;
+
+        System.out.println("\n\n##### listener UpdateStatus : " + completed.toJson() + "\n\n");
+        Optional<Booking> booking = bookingRepository.findById(completed.getBookingId());
+        if(booking.isPresent()){
+            Booking bookingValue = booking.get();
+            bookingValue.setStatus("INJECTION_COMPLETED");
+            bookingRepository.save(bookingValue);
+        }
+            
+    }
+
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whatever(@Payload String eventString){}
+
+
+}
+```
+
+ BookRental 서비스의 RentalRepository.java
+
+
+```java
+package book.rental.system;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(collectionResourceRel="rentals", path="rentals")
+public interface RentalRepository extends PagingAndSortingRepository<Rental, Long>{
+
+
+}
+```
+
+DDD 적용 후 REST API의 테스트를 통하여 정상적으로 동작하는 것을 확인할 수 있었다.
+
+## Gateway 적용
+TBD
 
 # 운영
 
