@@ -288,7 +288,7 @@ TBD
 
 ## Gateway 적용
 GateWay 구성를 통하여 각 서비스들의 진입점을 설정함 
-'''sehll
+```yaml
 server:
   port: 8088
 
