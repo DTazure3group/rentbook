@@ -276,10 +276,111 @@ public interface RentalRepository extends PagingAndSortingRepository<Rental, Lon
 }
 ```
 
-DDD 적용 후 REST API의 테스트를 통하여 정상적으로 동작하는 것을 확인할 수 있었다.
+## 적용 후 REST API 의 테스트
+#  책 대여 처리
+http post localhost:8081/rent bookId=1 price=1000 startDate=20210913 returnDate=20211013 customerId=1234 customerPhoneNo=01012345678 rentStatus=RENT
+
+# 책 대여를 위한 예치금 적립
+TBD
+
+# 책 등록 
+TBD
 
 ## Gateway 적용
-TBD
+GateWay 구성를 통하여 각 서비스들의 진입점을 설정함 
+'''sehll
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: Rental
+          uri: http://localhost:8081
+          predicates:
+            - Path=/rentals/** 
+        - id: Book
+          uri: http://localhost:8082
+          predicates:
+            - Path=/books/** 
+        - id: Payment
+          uri: http://localhost:8083
+          predicates:
+            - Path=/payments/** 
+        - id: Alert
+          uri: http://localhost:8084
+          predicates:
+            - Path=/alerts/** 
+        - id: View
+          uri: http://localhost:8085
+          predicates:
+            - Path= /mypages/**
+        - id: Point
+          uri: http://localhost:8086
+          predicates:
+            - Path=/points/** 
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: Rental
+          uri: http://Rental:8080
+          predicates:
+            - Path=/rentals/** 
+        - id: Book
+          uri: http://Book:8080
+          predicates:
+            - Path=/books/** 
+        - id: Payment
+          uri: http://Payment:8080
+          predicates:
+            - Path=/payments/** 
+        - id: Alert
+          uri: http://Alert:8080
+          predicates:
+            - Path=/alerts/** 
+        - id: View
+          uri: http://View:8080
+          predicates:
+            - Path= /mypages/**
+        - id: Point
+          uri: http://Point:8080
+          predicates:
+            - Path=/points/** 
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
+
+...
 
 # 운영
 
