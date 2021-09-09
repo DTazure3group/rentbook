@@ -210,12 +210,12 @@ public class Rental {
     .. getter/setter Method 생략
 ```
 
- Booking 서비스의 PolicyHandler.java
-
+ Payment 서비스의 PolicyHandler.java
+ rental 완료시 Payment 이력을 처리한다.
 ```java
-package anticorona;
+package book.rental.system;
 
-import anticorona.config.kafka.KafkaProcessor;
+import book.rental.system.config.kafka.KafkaProcessor;
 
 import java.util.Optional;
 
@@ -228,22 +228,27 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PolicyHandler{
-    
-    @Autowired BookingRepository bookingRepository;
+    @Autowired PaymentRepository paymentRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverCompleted_UpdateStatus(@Payload Completed completed){
+    public void wheneverBookRented_PayPoint(@Payload BookRented bookRented){
 
-        if(!completed.validate()) return;
+        if(!bookRented.validate()) return;
 
-        System.out.println("\n\n##### listener UpdateStatus : " + completed.toJson() + "\n\n");
-        Optional<Booking> booking = bookingRepository.findById(completed.getBookingId());
-        if(booking.isPresent()){
-            Booking bookingValue = booking.get();
-            bookingValue.setStatus("INJECTION_COMPLETED");
-            bookingRepository.save(bookingValue);
+        System.out.println("\n\n##### listener PayPoint : " + bookRented.toJson() + "\n\n");
+
+        if("RENT".equals(bookRented.getRentStatus())){
+
+            Payment payment =new Payment();
+
+            payment.setBookId(bookRented.getBookid());
+            payment.setCustomerId(bookRented.getCustomerId());
+            payment.setPrice(bookRented.getPrice());
+            payment.setRentalId(bookRented.getRentalId());
+            paymentRepository.save(payment);
+        }else{
+            System.out.println("\n\n##### listener PayPoint Process Failed : Status -->" +bookRented.getRentStatus() + "\n\n");
         }
-            
     }
 
 
@@ -252,6 +257,7 @@ public class PolicyHandler{
 
 
 }
+
 ```
 
  BookRental 서비스의 RentalRepository.java
