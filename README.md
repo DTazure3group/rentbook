@@ -277,6 +277,7 @@ public interface RentalRepository extends PagingAndSortingRepository<Rental, Lon
 ```
 
 ## 적용 후 REST API 의 테스트
+```shell
 책 대여 처리
 http post localhost:8081/rent bookId=1 price=1000 startDate=20210913 returnDate=20211013 customerId=1234 customerPhoneNo=01012345678 rentStatus=RENT
 
@@ -285,6 +286,7 @@ TBD
 
 책 등록 
 TBD
+'''
 
 ## Gateway 적용
 GateWay 구성를 통하여 각 서비스들의 진입점을 설정함 
