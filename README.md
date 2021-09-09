@@ -277,6 +277,7 @@ public interface RentalRepository extends PagingAndSortingRepository<Rental, Lon
 ```
 
 ## 적용 후 REST API 의 테스트
+각 서비스들의 Rest API 호출을 통하여 테스트를 수행하였음
 
 ```shell
 책 대여 처리
@@ -290,7 +291,7 @@ TBD
 ```
 
 ## Gateway 적용
-GateWay 구성를 통하여 각 서비스들의 진입점을 설정함 
+GateWay 구성를 통하여 각 서비스들의 진입점을 설정하여 라우팅 설정하였다.
 ```yaml
 server:
   port: 8088
@@ -384,8 +385,18 @@ server:
   port: 8080
 
 ```
+## CQRS 적용
+TBD
+
+## 폴리글랏 퍼시스턴스
+TBD
+
+## 동기식 호출과 Fallback 처리
+TBD
+
+## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
+TBD
 
 # 운영
-
 TBD
 
