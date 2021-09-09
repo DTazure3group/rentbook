@@ -277,13 +277,13 @@ public interface RentalRepository extends PagingAndSortingRepository<Rental, Lon
 ```
 
 ## 적용 후 REST API 의 테스트
-#  책 대여 처리
+책 대여 처리
 http post localhost:8081/rent bookId=1 price=1000 startDate=20210913 returnDate=20211013 customerId=1234 customerPhoneNo=01012345678 rentStatus=RENT
 
-# 책 대여를 위한 예치금 적립
+책 대여를 위한 예치금 적립
 TBD
 
-# 책 등록 
+책 등록 
 TBD
 
 ## Gateway 적용
