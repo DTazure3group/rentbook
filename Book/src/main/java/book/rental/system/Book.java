@@ -11,9 +11,9 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String bookname;
-    private Integer price;
+    private Long bookId;
+    private String bookName;
+    private Long price;
     private Boolean available;
 
     @PostPersist
@@ -36,24 +36,24 @@ public class Book {
     }
 
     public Long getId() {
-        return id;
+        return bookId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long bookId) {
+        this.bookId = bookId;
     }
-    public String getBookname() {
-        return bookname;
+    public String getBookName() {
+        return bookName;
     }
 
-    public void setBookname(String bookname) {
-        this.bookname = bookname;
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
-    public Integer getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
     public Boolean getAvailable() {

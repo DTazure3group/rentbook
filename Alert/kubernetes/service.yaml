@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Alert
+  name: alert
   labels:
-    app: Alert
+    app: alert
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Alert
+    app: alert

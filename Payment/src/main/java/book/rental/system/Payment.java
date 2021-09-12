@@ -12,15 +12,16 @@ public class Payment {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long paymentId;
-    private Integer customerId;
-    private Integer price;
-    private Integer bookId;
-    private Integer rentalId;
+    private Long customerId;
+    private Long price;
+    private Long bookId;
+    private Long rentalId;
 
     @PostPersist
     public void onPostPersist(){
         PointPaid pointPaid = new PointPaid();
         BeanUtils.copyProperties(this, pointPaid);
+        pointPaid.setPoint(this.price);
         pointPaid.publishAfterCommit();
 
     }
@@ -32,32 +33,32 @@ public class Payment {
     public void setPaymentId(Long paymentId) {
         this.paymentId = paymentId;
     }
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
-    public Integer getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
-    public Integer getBookId() {
+    public Long getBookId() {
         return bookId;
     }
 
-    public void setBookId(Integer bookId) {
+    public void setBookId(Long bookId) {
         this.bookId = bookId;
     }
-    public Integer getRentalId() {
+    public Long getRentalId() {
         return rentalId;
     }
 
-    public void setRentalId(Integer rentalId) {
+    public void setRentalId(Long rentalId) {
         this.rentalId = rentalId;
     }
 

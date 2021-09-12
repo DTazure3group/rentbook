@@ -8,11 +8,6 @@ public class BookRented extends AbstractEvent {
     private Long rentalId;
     private String  rentStatus;
 
-    public BookRented(){
-        super();
-    }
-
-    
     public Long getRentalId() {
         return rentalId;
     }
@@ -27,6 +22,10 @@ public class BookRented extends AbstractEvent {
 
     public void setRentStatus(String rentStatus) {
         this.rentStatus = rentStatus;
+    }
+
+    public BookRented(){
+        super();
     }
 
     public Long getBookId() {

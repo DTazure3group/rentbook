@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Rental
+  name: rental
+  namespace: rentbook
   labels:
-    app: Rental
+    app: rental
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Rental
+      app: rental
   template:
     metadata:
       labels:
-        app: Rental
+        app: rental
     spec:
       containers:
-        - name: Rental
-          image: username/Rental:latest
+        - name: rental
+          image: rentbook.azurecr.io/rental:latest
           ports:
             - containerPort: 8080
           readinessProbe:

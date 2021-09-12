@@ -2,41 +2,53 @@ package book.rental.system;
 
 public class BookRented extends AbstractEvent {
 
-    private Long id;
-    private Integer bookid;
-    private Integer price;
-    private Integer customerId;
+    private Long bookId;
+    private Long price;
+    private Long customerId;
+    private Long rentalId;
+    private String  rentStatus;
 
     public BookRented(){
         super();
     }
 
-    public Long getId() {
-        return id;
+    
+    public Long getRentalId() {
+        return rentalId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public Integer getBookid() {
-        return bookid;
+    public void setRentalId(Long rentalId) {
+        this.rentalId = rentalId;
     }
 
-    public void setBookid(Integer bookid) {
-        this.bookid = bookid;
+    public String getRentStatus() {
+        return rentStatus;
     }
-    public Integer getPrice() {
+
+    public void setRentStatus(String rentStatus) {
+        this.rentStatus = rentStatus;
+    }
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
+    
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 }

@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Alert
+  name: alert
+  namespace: rentbook
   labels:
-    app: Alert
+    app: alert
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Alert
+      app: alert
   template:
     metadata:
       labels:
-        app: Alert
+        app: alert
     spec:
       containers:
-        - name: Alert
-          image: username/Alert:latest
+        - name: alert
+          image: rentbook.azurecr.io/alert:latest
           ports:
             - containerPort: 8080
           readinessProbe:

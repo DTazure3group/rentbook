@@ -2,17 +2,17 @@ package book.rental.system;
 
 public class PointPaid extends AbstractEvent {
 
-    private Long id;
+//    private Long id;
     private Long paymentID;
-    private Integer customerid;
-    private Integer point;
-    private Integer bookid;
-    private Integer rentalId;
+    private Long customerId;
+    private Long point;
+    private Long bookId;
+    private Long rentalId;
 
     public PointPaid(){
         super();
     }
-
+/*
     public Long getId() {
         return id;
     }
@@ -20,6 +20,7 @@ public class PointPaid extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
+*/    
     public Long getPaymentId() {
         return paymentID;
     }
@@ -27,32 +28,32 @@ public class PointPaid extends AbstractEvent {
     public void setPaymentId(Long paymentID) {
         this.paymentID = paymentID;
     }
-    public Integer getCustomerid() {
-        return customerid;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomerid(Integer customerid) {
-        this.customerid = customerid;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
-    public Integer getPoint() {
+    public Long getPoint() {
         return point;
     }
 
-    public void setPoint(Integer point) {
+    public void setPoint(Long point) {
         this.point = point;
     }
-    public Integer getBookid() {
-        return bookid;
+    public Long getBookId() {
+        return bookId;
     }
 
-    public void setBookid(Integer bookid) {
-        this.bookid = bookid;
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
-    public Integer getRentalId() {
+    public Long getRentalId() {
         return rentalId;
     }
 
-    public void setRentalId(Integer rentalId) {
+    public void setRentalId(Long rentalId) {
         this.rentalId = rentalId;
     }
 }

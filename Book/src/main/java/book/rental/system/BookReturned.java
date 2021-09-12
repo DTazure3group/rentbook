@@ -4,53 +4,58 @@ import java.util.Date;
 
 public class BookReturned extends AbstractEvent {
 
-    private Long id;
-    private Integer bookid;
-    private String bookname;
-    private Integer price;
-    private Date startdate;
-    private Date returndate;
+    private Long rentalId;
+    private Long bookId;
+    private String bookName;
+    private Long price;
+    private String startDate;
+    private String returnDate;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public Integer getBookid() {
-        return bookid;
+    public BookReturned(){
+        super();
     }
 
-    public void setBookid(Integer bookid) {
-        this.bookid = bookid;
-    }
-    public String getBookname() {
-        return bookname;
+    public Long getRentalId() {
+        return rentalId;
     }
 
-    public void setBookname(String bookname) {
-        this.bookname = bookname;
+    public void setRentalId(Long rentalId) {
+        this.rentalId = rentalId;
     }
-    public Integer getPrice() {
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
-    public Date getStartdate() {
-        return startdate;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStartdate(Date startdate) {
-        this.startdate = startdate;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
-    public Date getReturndate() {
-        return returndate;
+    public String getReturnDate() {
+        return returnDate;
     }
 
-    public void setReturndate(Date returndate) {
-        this.returndate = returndate;
+    public void setReturnDate(String returnDate) {
+        this.returnDate = returnDate;
     }
 }

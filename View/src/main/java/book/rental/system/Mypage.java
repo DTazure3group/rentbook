@@ -10,12 +10,12 @@ public class Mypage {
         @Id
         @GeneratedValue(strategy=GenerationType.AUTO)
         private Long id;
-        private Integer customerid;
-        private Integer rentid;
-        private Integer bookid;
+        private Long customerId;
+        private Long rentId;
+        private Long bookId;
         private String bookName;
-        private Boolean price;
-        private Integer point;
+        private Long price;
+        private Long point;
         private String rentStatus;
 
 
@@ -26,26 +26,26 @@ public class Mypage {
         public void setId(Long id) {
             this.id = id;
         }
-        public Integer getCustomerid() {
-            return customerid;
+        public Long getCustomerId() {
+            return customerId;
         }
 
-        public void setCustomerid(Integer customerid) {
-            this.customerid = customerid;
+        public void setCustomerId(Long customerId) {
+            this.customerId = customerId;
         }
-        public Integer getRentid() {
-            return rentid;
-        }
-
-        public void setRentid(Integer rentid) {
-            this.rentid = rentid;
-        }
-        public Integer getBookid() {
-            return bookid;
+        public Long getRentId() {
+            return rentId;
         }
 
-        public void setBookid(Integer bookid) {
-            this.bookid = bookid;
+        public void setRentId(Long rentId) {
+            this.rentId = rentId;
+        }
+        public Long getBookId() {
+            return bookId;
+        }
+
+        public void setBookId(Long bookId) {
+            this.bookId = bookId;
         }
         public String getBookName() {
             return bookName;
@@ -54,18 +54,18 @@ public class Mypage {
         public void setBookName(String bookName) {
             this.bookName = bookName;
         }
-        public Boolean getPrice() {
+        public Long getPrice() {
             return price;
         }
 
-        public void setPrice(Boolean price) {
+        public void setPrice(Long price) {
             this.price = price;
         }
-        public Integer getPoint() {
+        public Long getPoint() {
             return point;
         }
 
-        public void setPoint(Integer point) {
+        public void setPoint(Long point) {
             this.point = point;
         }
         public String getRentStatus() {

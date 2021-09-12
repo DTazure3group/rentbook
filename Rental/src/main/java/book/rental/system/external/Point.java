@@ -3,7 +3,7 @@ package book.rental.system.external;
 public class Point {
 
     private Long customerId;
-    private Integer point;
+    private Long point;
 
     public Long getCustomerId() {
         return customerId;
@@ -11,10 +11,10 @@ public class Point {
     public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
-    public Integer getPoint() {
+    public Long getPoint() {
         return point;
     }
-    public void setPoint(Integer point) {
+    public void setPoint(Long point) {
         this.point = point;
     }
 

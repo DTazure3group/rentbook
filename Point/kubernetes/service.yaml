@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Point
+  name: point
   labels:
-    app: Point
+    app: point
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Point
+    app: point

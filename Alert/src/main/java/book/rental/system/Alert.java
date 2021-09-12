@@ -12,10 +12,10 @@ public class Alert {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private Integer rentalid;
-    private String customerid;
-    private String customrphnoeno;
-    private Date returndate;
+    private Long rentalId;
+    private Long customerId;
+    private String customerPhoneNo;
+    private String returnDate;
 
     @PostPersist
     public void onPostPersist(){
@@ -32,33 +32,33 @@ public class Alert {
     public void setId(Long id) {
         this.id = id;
     }
-    public Integer getRentalid() {
-        return rentalid;
+    public Long getRentalid() {
+        return rentalId;
     }
 
-    public void setRentalid(Integer rentalid) {
-        this.rentalid = rentalid;
+    public void setRentalid(Long rentalId) {
+        this.rentalId = rentalId;
     }
-    public String getCustomerid() {
-        return customerid;
-    }
-
-    public void setCustomerid(String customerid) {
-        this.customerid = customerid;
-    }
-    public String getCustomrphnoeno() {
-        return customrphnoeno;
+    public Long getCustomerid() {
+        return customerId;
     }
 
-    public void setCustomrphnoeno(String customrphnoeno) {
-        this.customrphnoeno = customrphnoeno;
+    public void setCustomerid(Long customerId) {
+        this.customerId = customerId;
     }
-    public Date getReturndate() {
-        return returndate;
+    public String getCustomrPhnoeNo() {
+        return customerPhoneNo;
     }
 
-    public void setReturndate(Date returndate) {
-        this.returndate = returndate;
+    public void setCustomrPhnoeNo(String customerPhoneNo) {
+        this.customerPhoneNo = customerPhoneNo;
+    }
+    public String getReturndate() {
+        return returnDate;
+    }
+
+    public void setReturndate(String returnDate) {
+        this.returnDate = returnDate;
     }
 
 

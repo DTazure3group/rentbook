@@ -26,10 +26,10 @@ spring:
       bindings:
         event-in:
           group: Point
-          destination: book.rental.system
+          destination: bookrental
           contentType: application/json
         event-out:
-          destination: book.rental.system
+          destination: bookrental
           contentType: application/json
 
 logging:
@@ -58,8 +58,12 @@ spring:
       bindings:
         event-in:
           group: Point
-          destination: book.rental.system
+          destination: bookrental
           contentType: application/json
         event-out:
-          destination: book.rental.system
+          destination: bookrental
           contentType: application/json
+  logging:
+    level:
+      root: info
+    file: /mnt/azure/logs/point.log

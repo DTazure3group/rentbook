@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Payment
+  name: payment
+  namespace: rentbook
   labels:
-    app: Payment
+    app: payment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Payment
+      app: payment
   template:
     metadata:
       labels:
-        app: Payment
+        app: payment
     spec:
       containers:
-        - name: Payment
-          image: username/Payment:latest
+        - name: payment
+          image: rentbook.azurecr.io/payment:latest
           ports:
             - containerPort: 8080
           readinessProbe:

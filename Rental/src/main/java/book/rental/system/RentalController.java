@@ -1,17 +1,32 @@
 package book.rental.system;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 
  @RestController
  public class RentalController {
 
+    @Autowired RentalRepository rentalRepositroy;
 
+    @PostMapping("rentals/rent")
+    Rental bookRentalCreate(@RequestBody String data) {
+        System.out.println("########### bookRentalCreate data :" +data);
+
+        ObjectMapper mapper = new ObjectMapper();
+        Rental rental = null;
+        try {
+             rental = mapper.readValue(data, Rental.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return rentalRepositroy.save(rental);
+    }
 
  }

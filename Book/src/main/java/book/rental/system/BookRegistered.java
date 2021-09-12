@@ -2,8 +2,8 @@ package book.rental.system;
 
 public class BookRegistered extends AbstractEvent {
 
-    private Long id;
-    private Integer price;
+    private Long bookId;
+    private Long price;
     private Boolean available;
 
     public BookRegistered(){
@@ -11,17 +11,17 @@ public class BookRegistered extends AbstractEvent {
     }
 
     public Long getId() {
-        return id;
+        return bookId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long bookId) {
+        this.bookId = bookId;
     }
-    public Integer getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
     public Boolean getAvailable() {

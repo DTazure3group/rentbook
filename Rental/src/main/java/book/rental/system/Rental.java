@@ -2,8 +2,6 @@ package book.rental.system;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
-import java.util.List;
-import java.util.Date;
 
 @Entity
 @Table(name="Rental_table")
@@ -12,39 +10,49 @@ public class Rental {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long rentalId;
-    private Integer bookId;
+    private Long bookId;
     private String bookName;
-    private Integer price;
-    private Date startDate;
-    private Date returnDate;
-    private Integer customerId;
+    private Long price;
+    private String startDate;
+    private String returnDate;
+    private Long customerId;
     private String customerPhoneNo;
     private String rentStatus;
 
     @PostPersist
-    public void onPostPersist(){
-        BookRented bookRented = new BookRented();
-        BeanUtils.copyProperties(this, bookRented);
-        bookRented.publishAfterCommit();
+    public void onPostPersist() throws Exception{
 
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-        book.rental.system.external.Point point = new book.rental.system.external.Point();
-        // mappings goes here
-/** TODO : REQ-RES 구현 필요 */    
-//       Application.applicationContext.getBean(book.rental.system.external.PointService.class)
-//           .checkPoint(point);
-
-        BookReturned bookReturned = new BookReturned();
-        BeanUtils.copyProperties(this, bookReturned);
-        bookReturned.publishAfterCommit();
-
-        ReturnDelayed returnDelayed = new ReturnDelayed();
-        BeanUtils.copyProperties(this, returnDelayed);
-        returnDelayed.publishAfterCommit();
+        System.out.println(">>>>>>>>>>>>>>>>>>>   checkPoint  CustomerID : " + this.customerId);
+        System.out.println(">>>>>>>>>>>>>>>>>>>   checkPoint  BookId : " + this.bookId);
+        if(RentalApplication.applicationContext.getBean(book.rental.system.external.PointService.class)
+        .checkPoint(this.customerId, this.price)){
+            //  서적 대여 시 상태변경 후 Publish 
+            BookRented bookRented = new BookRented();
+            BeanUtils.copyProperties(this, bookRented);
+            bookRented.publishAfterCommit();
+            System.out.println(">>>>>>>>>>>>>>>>>>>   checkPoint  bookRented.getBookId : " +bookRented.getBookId());
+        }
+        else{
+            System.out.println(">>>>>>>>>>>>>>>>>>>   Out of Customer point Exception Raised.");
+            throw new Exception(" Out of Customer point Exception Raised.");
+        }
 
     }
+
+    @PostUpdate 
+    public void onPostUpdate(){
+
+        if("RETURN".equals(this.rentStatus)){           // 반납 처리 Publish
+            BookReturned bookReturned = new BookReturned();
+            BeanUtils.copyProperties(this, bookReturned);
+            bookReturned.publishAfterCommit();
+
+        } else if("DELAY".equals(this.rentStatus)){     // 반납지연 Publish
+            ReturnDelayed returnDelayed = new ReturnDelayed();
+            BeanUtils.copyProperties(this, returnDelayed);
+            returnDelayed.publishAfterCommit();
+        }
+    }    
 
     public Long getRentalId() {
         return rentalId;
@@ -53,11 +61,11 @@ public class Rental {
     public void setRentalId(Long rentalId) {
         this.rentalId = rentalId;
     }
-    public Integer getBookId() {
+    public Long getBookId() {
         return bookId;
     }
 
-    public void setBookId(Integer bookId) {
+    public void setBookId(Long bookId) {
         this.bookId = bookId;
     }
     public String getBookName() {
@@ -67,32 +75,32 @@ public class Rental {
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
-    public Integer getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
-    public Date getReturnDate() {
+    public String getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
     }
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
     public String getCustomerPhoneNo() {
