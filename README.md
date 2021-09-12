@@ -105,6 +105,7 @@ TBD
 ## 헥사고날 아키텍처 다이어그램 도출
     
 TBD
+![polii](https://user-images.githubusercontent.com/89369983/132992132-6bcaf4dc-a4d8-48ba-a4ea-ba74adc01d7d.PNG)
 
 
 
