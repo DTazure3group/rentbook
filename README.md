@@ -391,6 +391,7 @@ TBD
 
 ## 폴리글랏 퍼시스턴스
 TBD
+![polii](https://user-images.githubusercontent.com/89369983/132992132-6bcaf4dc-a4d8-48ba-a4ea-ba74adc01d7d.PNG)
 
 ## 동기식 호출과 Fallback 처리
 TBD
