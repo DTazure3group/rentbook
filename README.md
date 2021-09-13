@@ -76,7 +76,7 @@ B. 도서관리
 
 
 ### 액터, 커맨드 부착하여 읽기 좋게
-![action](https://user-images.githubusercontent.com/89369983/132147829-6eafb506-a812-467d-879d-251d62374b7e.PNG)
+![action](https://user-images.githubusercontent.com/88808251/133040781-18dfdfb8-c608-4b80-83cb-f1583f7efbea.png)
 
 ### 어그리게잇으로 묶기
 ![aggregate](https://user-images.githubusercontent.com/89369983/132147833-9472777f-5d02-42fe-9a65-a0d9e511f332.PNG)
