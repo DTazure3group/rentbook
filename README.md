@@ -407,7 +407,7 @@ mypage 서비스의 DB와 Rental/Payment/Point 서비스의 DB를 다른 DB를 �
 ## 동기식 호출과 Fallback 처리
 TBD
 
-## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
+## 비동기식 호출(Req/Resp) 적용
 TBD
 
 
