@@ -441,5 +441,27 @@ rental 서비스에서 주문을 수신하게 작성되어 있다.
 
 
 # 운영
-TBD
+
+## Deploy/ Pipeline
+
+
+## Config Map
+
+
+
+## Autoscale (HPA)
+
+  
+
+## Circuit Breaker
+
+
+
+## Zero-Downtime deploy (Readiness Probe)
+
+
+
+    
+## Self-healing (Liveness Probe)
+
 
