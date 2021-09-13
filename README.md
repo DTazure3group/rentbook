@@ -85,7 +85,7 @@ B. 도서관리
 ![boundedct](https://user-images.githubusercontent.com/88808251/133041492-4cfab21a-06fd-49ae-9841-68c9986f0495.png)
 
 ### 폴리시 부착 (괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남)
-![policy](https://user-images.githubusercontent.com/89369983/132147844-a3fef6f5-f7c0-4659-84f9-c01b0f616261.PNG)
+![policy](https://user-images.githubusercontent.com/88808251/133041754-0be6eedd-56d0-4938-bf12-4ea5eeff6ed6.png)
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
 ![policy_ct](https://user-images.githubusercontent.com/89369983/132147847-f73fe720-d99d-47b9-9288-b0ebb09743fe.PNG)
