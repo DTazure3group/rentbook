@@ -79,7 +79,7 @@ B. 도서관리
 ![action](https://user-images.githubusercontent.com/88808251/133040781-18dfdfb8-c608-4b80-83cb-f1583f7efbea.png)
 
 ### 어그리게잇으로 묶기
-![aggregate](https://user-images.githubusercontent.com/89369983/132147833-9472777f-5d02-42fe-9a65-a0d9e511f332.PNG)
+![aggregate](https://user-images.githubusercontent.com/88808251/133040968-2c8724f1-1129-47be-b78c-b01e15eb81ea.png)
 
 ### 바운디드 컨텍스트로 묶기
 ![boundedct](https://user-images.githubusercontent.com/89369983/132147838-6f1daa46-972c-4039-824b-e26ead7d9ed4.PNG)
