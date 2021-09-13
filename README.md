@@ -401,6 +401,36 @@ TBD
 ## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
 TBD
 
+
+## SAGA패턴 
+
+SAGA 패턴은 각 서비스의 트랜잭션은 단일 서비스 내의 데이터를 갱신하는 일종의 로컬 트랜잭션 방법이고 서비스의 트랜잭션이 완료 후에 다음 서비스가 트리거 되어, 트랜잭션을 실행하는 방법입니다.
+
+현재 도서 대여 시스템에도 SAGA 패턴에 맞추어서 작성되어 있다.
+
+**SAGA 패턴에 맞춘 트랜잭션 실행**
+
+![saga1](https://user-images.githubusercontent.com/33479996/133033751-af4b9595-276a-4b9d-9148-4e4a0bc46b61.PNG)
+
+현재 도서 대여 시스템은 SAGA 패턴에 맞추어서 rental 서비스의 rental 생성이 완료되면 Payment 서비스를 트리거하게 되어 payment를 업데이트하여
+rental 서비스에서 주문을 수신하게 작성되어 있다.
+
+아래와 같이 실행한 결과이다.
+
+![saga2](https://user-images.githubusercontent.com/33479996/133034467-b75bd437-f5f7-40f7-8d0c-5fc79abca509.PNG)
+
+위와 같이 rental 서비스에서 주문을 생성하게 될 경우 아래와 같이 Payment 서비스에서 payment 상태를 업데이트 하게 된다. 
+
+![SAGA3](https://user-images.githubusercontent.com/33479996/133034677-5998fe8a-ae92-4bc7-91ba-485580d1f8db.PNG)
+
+
+위와 같이 Payment 서비스에서 상태를 업데이트 하면서 이벤트를 발신하게 되고 이를 수신 받은 MyPage 서비스에서 Point를 아래와 같이 차감하게 된다.
+
+![SAGA4](https://user-images.githubusercontent.com/33479996/133035070-22465fee-236b-465e-a135-876c184b715a.PNG)
+
+![SAGA5](https://user-images.githubusercontent.com/33479996/133035437-dab9c7ce-4316-4d64-af03-a4458ac163d3.PNG)
+
+
 # 운영
 TBD
 
