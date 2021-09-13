@@ -501,21 +501,29 @@ kubectl apply -f service.yaml
 
 ## Config Map
 
+![image](https://user-images.githubusercontent.com/89369983/133117696-5f3b4fd7-e850-4caa-901b-b3171baca69b.png)
+![image](https://user-images.githubusercontent.com/89369983/133117908-934c3b40-99a2-4905-9963-6692d6c82a28.png)
 
 
 ## Autoscale (HPA)
 
-  
+![image](https://user-images.githubusercontent.com/89369983/133118106-ab6141ad-bd66-40bd-a14c-bcf21ecf5e23.png)
+![image](https://user-images.githubusercontent.com/89369983/133118622-1a8e337b-b522-44fa-81c2-4b67877144d3.png)
+![image](https://user-images.githubusercontent.com/89369983/133118351-4315f1b0-85b9-46ea-b23a-9d90ac21f6d5.png)
 
 ## Circuit Breaker
-
+![image](https://user-images.githubusercontent.com/89369983/133118751-c6ce8e89-a0ba-4655-bd7d-3da68f269bed.png)
+![image](https://user-images.githubusercontent.com/89369983/133118831-9e6c5580-bc7a-4690-9084-250fcfbb47ee.png)
 
 
 ## Zero-Downtime deploy (Readiness Probe)
-
+![image](https://user-images.githubusercontent.com/89369983/133119331-8c5e6133-b397-4357-ab1d-1c5f87745060.png)
+![image](https://user-images.githubusercontent.com/89369983/133118944-e973c8c8-6e3c-4072-9e3c-f6dff07b56bc.png)
+![image](https://user-images.githubusercontent.com/89369983/133119028-cdc334ef-72e0-43ac-a603-9a38ee5e0ed8.png)
 
 
     
 ## Self-healing (Liveness Probe)
+![image](https://user-images.githubusercontent.com/89369983/133119195-0aee658f-fe25-46dd-abc2-2b125372f55c.png)
 
 
