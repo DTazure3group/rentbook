@@ -5,9 +5,9 @@
     namespace: rentbook
   spec:
     hosts:
-    - Rental
+    - rental
     http:
     - route:
       - destination:
-          host: Rental
-      timeout: 1s
+          host: rental
+      timeout: 3s
