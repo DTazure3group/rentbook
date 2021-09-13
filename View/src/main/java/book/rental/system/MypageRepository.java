@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface MypageRepository extends CrudRepository<Mypage, Long> {
 
-    Optional<Mypage> findByRentid(Long rentalId);
-    Optional<Mypage> findByCustomerid(Long customerId);
+    Optional<Mypage> findByRentId(Long rentalId);
+    Optional<Mypage> findByCustomerId(Long customerId);
 
 }

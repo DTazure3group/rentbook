@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: book
-          image: rentbook.azurecr.io/book:latest
+          image: grp03.azurecr.io/book:latest
           ports:
             - containerPort: 8080
           readinessProbe:

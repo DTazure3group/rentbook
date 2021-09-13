@@ -16,11 +16,11 @@ public class MypageController {
 
     @Autowired MypageRepository mypageRepository;
     
-    @GetMapping("/mypage/{customerid}")
-    Mypage myInfo(@PathVariable(value = "customerid") Long customerID) {
-        System.out.println(">>>>>>>>>>>>>>>>  customerID : "+customerID);
+    @GetMapping("/mypage/{customerId}")
+    Mypage myInfo(@PathVariable(value = "customerId") Long customerId) {
+        System.out.println(">>>>>>>>>>>>>>>>  customerId : "+customerId);
 
-        Optional<Mypage> mypageOptional = mypageRepository.findByCustomerid(customerID);
+        Optional<Mypage> mypageOptional = mypageRepository.findByCustomerId(customerId);
         Mypage mypage = mypageOptional.get();
 
         return mypage;

@@ -63,3 +63,6 @@ spring:
         event-out:
           destination: bookrental
           contentType: application/json
+api:
+  url:
+    point: ${Point-url}

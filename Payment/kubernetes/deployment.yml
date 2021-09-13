@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: rentbook.azurecr.io/payment:latest
+          image: grp03.azurecr.io/payment:latest
           ports:
             - containerPort: 8080
           readinessProbe:

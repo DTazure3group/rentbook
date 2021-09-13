@@ -4,7 +4,7 @@ metadata:
   name: rental
   namespace: rentbook
   labels:
-    app: rental
+    app: Rental
 spec:
   replicas: 1
   selector:
@@ -17,9 +17,15 @@ spec:
     spec:
       containers:
         - name: rental
-          image: rentbook.azurecr.io/rental:latest
+          image: grp03.azurecr.io/rental:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: Point-url
+              valueFrom:
+                configMapKeyRef:
+                  name: apiurl
+                  key: url
           readinessProbe:
             httpGet:
               path: '/actuator/health'
@@ -36,3 +42,10 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 5
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "500Mi"
+              cpu: "500m"

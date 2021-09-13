@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: alert
-          image: rentbook.azurecr.io/alert:latest
+          image: grp03.azurecr.io/alert:latest
           ports:
             - containerPort: 8080
           readinessProbe:

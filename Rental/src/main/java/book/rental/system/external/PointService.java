@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name="Point", url="http://Point:8080")
 //@FeignClient(name="Point", url="http://localhost:8086")
+//@FeignClient(name="Point", url="http://${api.url.Point}:8080")
 public interface PointService {
     @RequestMapping(method= RequestMethod.GET, path="/points/checkPoint")
     public boolean checkPoint(@RequestParam Long customerId, @RequestParam Long price);
     
-
 }
 

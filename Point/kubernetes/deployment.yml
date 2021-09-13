@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: point
-          image: rentbook.azurecr.io/point:latest
+          image: grp03.azurecr.io/point:latest
           ports:
             - containerPort: 8080
           readinessProbe:

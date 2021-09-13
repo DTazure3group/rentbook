@@ -46,7 +46,7 @@ public class MypageViewHandler {
             if (!bookReturned.validate()) return;
                 // view 객체 조회
 
-                Optional<Mypage> mypageOptional  = mypageRepository.findByRentid(bookReturned.getRentalId());
+                Optional<Mypage> mypageOptional  = mypageRepository.findByRentId(bookReturned.getRentalId());
 
                 if( mypageOptional.isPresent()) {
                     Mypage mypage = mypageOptional.get();

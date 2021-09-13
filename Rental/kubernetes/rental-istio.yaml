@@ -1,0 +1,13 @@
+  apiVersion: networking.istio.io/v1alpha3
+  kind: VirtualService
+  metadata:
+    name: vs-rental-network-rule
+    namespace: rentbook
+  spec:
+    hosts:
+    - Rental
+    http:
+    - route:
+      - destination:
+          host: Rental
+      timeout: 1s

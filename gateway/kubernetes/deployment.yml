@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: rentbook.azurecr.io/gateway:latest
+          image: grp03.azurecr.io/gateway:latest
           ports:
             - containerPort: 8080
