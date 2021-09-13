@@ -72,7 +72,7 @@ B. 도서관리
 ![event도출](https://user-images.githubusercontent.com/88808251/133038667-f9dfa441-70d8-49b0-9fda-275c9b8a4ff8.png)
 
 ### 부적격 이벤트 탈락
-![부적격event](https://user-images.githubusercontent.com/89369983/132147826-22815443-4fe5-49a9-b6ef-e40de68135e4.PNG)
+![부적격event](https://user-images.githubusercontent.com/88808251/133038874-87c1c2e8-fd3c-48ce-a249-7420095cdaf2.png)
 
 
 ### 액터, 커맨드 부착하여 읽기 좋게
