@@ -393,7 +393,7 @@ server:
 TBD
 
 ## 폴리글랏 퍼시스턴스
-mypage 서비스의 DB와 Rental/Payment/Point/MyPage 서비스의 DB를 다른 DB를 사용하여 MSA간 서로 다른 종류의 DB간에도 문제 없이 동작하여 다형성을 만족하는지 확인하였다.
+mypage 서비스의 DB와 Rental/Payment/Point 서비스의 DB를 다른 DB를 사용하여 MSA간 서로 다른 종류의 DB간에도 문제 없이 동작하여 다형성을 만족하는지 확인하였다.
 (폴리글랏을 만족)
 
 |서비스|DB|pom.xml|
