@@ -69,7 +69,7 @@ B. 도서관리
 
 
 ### 이벤트 도출
-![event도출](https://user-images.githubusercontent.com/89369983/132147821-4215c854-1ad3-4403-ab5a-6507db392833.PNG)
+![event도출](https://user-images.githubusercontent.com/88808251/133038667-f9dfa441-70d8-49b0-9fda-275c9b8a4ff8.png)
 
 ### 부적격 이벤트 탈락
 ![부적격event](https://user-images.githubusercontent.com/89369983/132147826-22815443-4fe5-49a9-b6ef-e40de68135e4.PNG)
