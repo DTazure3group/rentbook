@@ -100,14 +100,16 @@ B. 도서관리
 
 ## 헥사고날 아키텍처 다이어그램 도출
     
-TBD
+    - 호출관계에서 PubSub 과 Req/Resp 를 구분함
+    - 서브 도메인과 바운디드 컨텍스트의 분리
+    
 ![image](https://user-images.githubusercontent.com/89369983/133120467-3a6f40a2-3658-44b0-9064-e5b7c6ffbf6c.png)
 
 
 
 # 구현
 
-분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라,구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 8084, 8088 이다)
+분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라,구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 8086이다)
 
 ```shell
 cd book
@@ -232,8 +234,6 @@ public class PolicyHandler{
 
         if(!bookRented.validate()) return;
 
-        System.out.println("\n\n##### listener PayPoint : " + bookRented.toJson() + "\n\n");
-
         if("RENT".equals(bookRented.getRentStatus())){
 
             Payment payment =new Payment();
@@ -281,10 +281,10 @@ public interface RentalRepository extends PagingAndSortingRepository<Rental, Lon
 http post localhost:8081/rent bookId=1 price=1000 startDate=20210913 returnDate=20211013 customerId=1234 customerPhoneNo=01012345678 rentStatus=RENT
 
 책 대여를 위한 예치금 적립
-TBD
+http post localhost:8086/point customerId=1234 point=10000
 
 책 등록 
-TBD
+http post localhost:8082/book bookId=1 price=1000 bookName=azureMaster
 ```
 
 ## Gateway 적용
