@@ -88,7 +88,7 @@ B. 도서관리
 ![policy](https://user-images.githubusercontent.com/88808251/133041754-0be6eedd-56d0-4938-bf12-4ea5eeff6ed6.png)
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
-![policy_ct](https://user-images.githubusercontent.com/88808251/133042178-4658f5bb-eaf3-4e41-9237-3eaca9151ad8.png)
+![policy_ct](https://user-images.githubusercontent.com/88808251/133172776-f1f634ae-e50b-4d90-824a-fc112c80fbba.png)
 
 ### 완성된 1차 모형
 ![complete](https://user-images.githubusercontent.com/88808251/133042486-d90abec2-e747-46dc-ad03-92e02d76fe4b.png)
