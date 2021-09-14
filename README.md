@@ -640,6 +640,8 @@ $ kubectl autoscale deploy booking --min=1 --max=10 --cpu-percent=15
 
     
 ## Self-healing (Liveness Probe)
+
+  * Liveness Probe 설정 및 restart 시도 점검을 위해 잘못된값 설정으로 변경 후 RESTARTS 처리 테스트 결과
 ![image](https://user-images.githubusercontent.com/89369983/133119195-0aee658f-fe25-46dd-abc2-2b125372f55c.png)
 
 
