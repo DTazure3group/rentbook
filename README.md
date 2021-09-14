@@ -620,6 +620,7 @@ $ kubectl autoscale deploy booking --min=1 --max=10 --cpu-percent=15
 ```
 
 서비스에 Traffic 유입(siege를 통해 워크로드 발생)
+
 ![image](https://user-images.githubusercontent.com/89369983/133118622-1a8e337b-b522-44fa-81c2-4b67877144d3.png)
 
 부하테스트 결과 HPA 반영
