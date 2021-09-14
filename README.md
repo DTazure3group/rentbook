@@ -85,17 +85,17 @@ B. 도서관리
 ![boundedct](https://user-images.githubusercontent.com/88808251/133041492-4cfab21a-06fd-49ae-9841-68c9986f0495.png)
 
 ### 폴리시 부착 (괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남)
-![policy](https://user-images.githubusercontent.com/88808251/133041754-0be6eedd-56d0-4938-bf12-4ea5eeff6ed6.png)
+![policy](https://user-images.githubusercontent.com/88808251/133172776-f1f634ae-e50b-4d90-824a-fc112c80fbba.png)
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
 ![policy_ct](https://user-images.githubusercontent.com/88808251/133042178-4658f5bb-eaf3-4e41-9237-3eaca9151ad8.png)
 
 ### 완성된 1차 모형
-![complete](https://user-images.githubusercontent.com/88808251/133042486-d90abec2-e747-46dc-ad03-92e02d76fe4b.png)
+![complete](https://user-images.githubusercontent.com/88808251/133172930-a879c2ec-9439-4089-850f-03853375e5e2.png)
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
-![검증1](https://user-images.githubusercontent.com/89369983/132147856-4da33f2f-a09a-44ae-aa02-5d77b32d9fdb.PNG)
-![검증2](https://user-images.githubusercontent.com/89369983/132147861-c3a424bc-7f38-412b-a55b-3f09b6b725db.PNG)
+![검증1](https://user-images.githubusercontent.com/88808251/133173077-d8960688-2e8f-45cb-9850-e6b1b9870cc7.png)
+![검증2](https://user-images.githubusercontent.com/88808251/133173230-9f45a13a-2d64-4475-99ae-87cb756e0706.png)
 
 ### 모델 수정
 TBD
