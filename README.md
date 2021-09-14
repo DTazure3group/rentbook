@@ -95,7 +95,7 @@ B. 도서관리
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
 ![검증1](https://user-images.githubusercontent.com/88808251/133173077-d8960688-2e8f-45cb-9850-e6b1b9870cc7.png)
-![검증2](https://user-images.githubusercontent.com/89369983/132147861-c3a424bc-7f38-412b-a55b-3f09b6b725db.PNG)
+![검증2](https://user-images.githubusercontent.com/88808251/133173230-9f45a13a-2d64-4475-99ae-87cb756e0706.png)
 
 ### 모델 수정
 TBD
