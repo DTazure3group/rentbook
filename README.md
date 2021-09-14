@@ -394,16 +394,13 @@ mypage(View)는 Materialized View로 구현하여, 타 마이크로서비스의 
 
 책 대여(Rental) Transaction 발생 후 myPage 조회 결과 
 
-1. 예치금 적립
-2. 
+- 예치금 적립
 ![image](https://user-images.githubusercontent.com/89369983/133173724-2be57ffb-2b53-4dec-ad46-1f82df895192.png)
 
-2. 도서 대여
-3. 
+- 도서 대여
 ![image](https://user-images.githubusercontent.com/89369983/133173763-cc9effde-4845-4fa1-9d85-8d2782dd5141.png)
 
-3. mypage 대여 현황 조회
-4. 
+- mypage 대여 현황 조회
 ![image](https://user-images.githubusercontent.com/89369983/133173774-563b0f9b-0538-4345-b14c-369b7c610e95.png)
 
 
