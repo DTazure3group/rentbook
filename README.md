@@ -88,14 +88,14 @@ B. 도서관리
 ![policy](https://user-images.githubusercontent.com/88808251/133041754-0be6eedd-56d0-4938-bf12-4ea5eeff6ed6.png)
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
-![policy_ct](https://user-images.githubusercontent.com/88808251/133172776-f1f634ae-e50b-4d90-824a-fc112c80fbba.png)
+![policy_ct](https://user-images.githubusercontent.com/88808251/133042178-4658f5bb-eaf3-4e41-9237-3eaca9151ad8.png)
 
 ### 완성된 1차 모형
-![complete](https://user-images.githubusercontent.com/88808251/133172930-a879c2ec-9439-4089-850f-03853375e5e2.png)
+![complete](https://user-images.githubusercontent.com/88808251/133042486-d90abec2-e747-46dc-ad03-92e02d76fe4b.png)
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
-![검증1](https://user-images.githubusercontent.com/88808251/133173077-d8960688-2e8f-45cb-9850-e6b1b9870cc7.png)
-![검증2](https://user-images.githubusercontent.com/88808251/133173230-9f45a13a-2d64-4475-99ae-87cb756e0706.png)
+![검증1](https://user-images.githubusercontent.com/89369983/132147856-4da33f2f-a09a-44ae-aa02-5d77b32d9fdb.PNG)
+![검증2](https://user-images.githubusercontent.com/89369983/132147861-c3a424bc-7f38-412b-a55b-3f09b6b725db.PNG)
 
 ### 모델 수정
 TBD
@@ -390,7 +390,18 @@ server:
 
 ```
 ## CQRS 적용
-TBD
+mypage(View)는 Materialized View로 구현하여, 타 마이크로서비스의 데이터 원본에 Join SQL 등 구현 없이도 내 서비스의 화면 구성과 잦은 조회가 가능하게 구현 하였음.
+
+책 대여(Rental) Transaction 발생 후 myPage 조회 결과 
+
+
+![image](https://user-images.githubusercontent.com/89369983/133173724-2be57ffb-2b53-4dec-ad46-1f82df895192.png)
+
+![image](https://user-images.githubusercontent.com/89369983/133173763-cc9effde-4845-4fa1-9d85-8d2782dd5141.png)
+
+![image](https://user-images.githubusercontent.com/89369983/133173774-563b0f9b-0538-4345-b14c-369b7c610e95.png)
+
+
 
 ## 폴리글랏 퍼시스턴스
 mypage 서비스의 DB와 Rental/Payment/Point 서비스의 DB를 다른 DB를 사용하여 MSA간 서로 다른 종류의 DB간에도 문제 없이 동작하여 다형성을 만족하는지 확인하였다.
