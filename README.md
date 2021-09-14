@@ -421,7 +421,97 @@ mypage 서비스의 DB와 Rental/Payment/Point 서비스의 DB를 다른 DB를 �
 
 
 ## 동기식 호출과 Fallback 처리
-TBD
+책 대여를 위해서는 사용자 예치금이 적립되어 있어야 하며, 예치금은 책대여 금액 이상 적립되어 있어야 하는 요구사항이 있음
+해당 처리는 동기 호출이 필요하다고 판단하여 Rest Repository 에 의해 노출되어있는 REST 서비스를 FeignClient 를 이용하여 호출하도록 구현 하였음 
+
+Booking 서비스 내 external.VaccineService
+
+```java
+package book.rental.system.external;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+//@FeignClient(name="Point", url="http://Point:8080")
+//@FeignClient(name="Point", url="http://localhost:8086")
+@FeignClient(name="Point", url="http://${api.url.Point}:8080")
+public interface PointService {
+    @RequestMapping(method= RequestMethod.GET, path="/points/checkPoint")
+    public boolean checkPoint(@RequestParam Long customerId, @RequestParam Long price);
+    
+}
+```
+
+Booking 서비스 내 Req/Resp
+
+```java
+    @PostPersist
+    public void onPostPersist() throws Exception{
+        // 예치금이 책대여비용이상 보유하고 있는지 점검
+        if(RentalApplication.applicationContext.getBean(book.rental.system.external.PointService.class)
+        .checkPoint(this.customerId, this.price)){
+            BookRented bookRented = new BookRented();
+            BeanUtils.copyProperties(this, bookRented);
+            bookRented.publishAfterCommit();
+        }
+        else{
+            throw new Exception("Customer Point Check Exception !!");
+        }
+
+    }
+```
+
+Vaccine 서비스 내 Booking 서비스 Feign Client 요청 대상
+
+```java
+  @RestController
+ public class PointController {
+
+    @Autowired
+    PointRepository pointRepository;
+
+    @RequestMapping(value = "/points/checkPoint",
+        method = RequestMethod.GET,
+        produces = "application/json;charset=UTF-8")
+    public boolean checkPoint(HttpServletRequest request, HttpServletResponse response) {
+        boolean status = false;
+
+        Long customerId = Long.valueOf(request.getParameter("customerId"));
+        Long price = Long.valueOf(request.getParameter("price"));
+        
+        Optional<Point> point = pointRepository.findByCustomerId(customerId);
+        if(point.isPresent()){
+            Point pointValue = point.get();
+            System.out.println("##### /point/checkPoint  pointValue.getPoint() : #####"+pointValue.getPoint());
+            //Point 가 차감포인트 보다 큰지 점검 
+            if(pointValue.getPoint() - price > 0) {
+                status = true;
+            }
+        }
+
+        return status;
+    }
+```
+
+동작 확인
+
+접종 예약하기 시도 시  백신의 재고 수량을 체크함
+
+
+
+
+접종 예약 시 백신 재고수량을 초과하지 않으면 예약 가능
+
+
+
+
+접종 예약시 백신 재고수량을 초과하여 예약시 예약안됨
+
+
+
 
 ## 비동기식 호출(Req/Resp) 적용
 TBD
