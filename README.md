@@ -595,15 +595,34 @@ kubectl apply -f service.yaml
 ```
 
 ## Config Map
+- 변경 가능성이 있는 항목은 ConfigMap을 사용하여 설정 변경 할수 있도록 구성   
+  - Rental 서비스에서 바라보는 Point 서비스 url 일부분을 ConfigMap 사용하여 구현 함
+
+configmap 설정 및 소스 반영
 
 ![image](https://user-images.githubusercontent.com/89369983/133117696-5f3b4fd7-e850-4caa-901b-b3171baca69b.png)
+
+configmap 구성 내용 조회
+
 ![image](https://user-images.githubusercontent.com/89369983/133117908-934c3b40-99a2-4905-9963-6692d6c82a28.png)
 
 
 ## Autoscale (HPA)
+프로모션 등으로 사용자 유입이 급격한 증가시 안정적인 운영을 위해 Rental 자동화된 확장 기능을 적용 함
 
+Resource 설정 및 유입전 현황 
 ![image](https://user-images.githubusercontent.com/89369983/133118106-ab6141ad-bd66-40bd-a14c-bcf21ecf5e23.png)
+
+- rental 서비스에 대한 replica 를 동적으로 늘려주도록 HPA 를 설정(CPU 사용량이 15프로를 넘어서면 replica 를 10개까지 늘리도록 설정)
+
+```sh
+$ kubectl autoscale deploy booking --min=1 --max=10 --cpu-percent=15
+```
+
+서비스에 Traffic 유입(siege를 통해 워크로드 발생)
 ![image](https://user-images.githubusercontent.com/89369983/133118622-1a8e337b-b522-44fa-81c2-4b67877144d3.png)
+
+부하테스트 결과 HPA 반영
 ![image](https://user-images.githubusercontent.com/89369983/133118351-4315f1b0-85b9-46ea-b23a-9d90ac21f6d5.png)
 
 ## Circuit Breaker
