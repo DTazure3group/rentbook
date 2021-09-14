@@ -59,7 +59,7 @@ B. 도서관리
 
 
 ## AS-IS 조직 (Horizontally-Aligned)
-![asis](https://github.com/zliterz/food-delivery/issues/2#issue-994523558)
+![asis](https://user-images.githubusercontent.com/89369983/132091689-4094136c-c6fa-477e-b614-b478eed1fa0f.PNG)
 
 ## TO-BE 조직 (Vertically-Aligned)
 ![tobe](https://user-images.githubusercontent.com/89369983/132091699-2f0f9164-55da-49d5-a35f-dc6eba7eed19.PNG)
