@@ -94,15 +94,8 @@ B. 도서관리
 ![complete](https://user-images.githubusercontent.com/88808251/133172930-a879c2ec-9439-4089-850f-03853375e5e2.png)
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
-![검증1](https://user-images.githubusercontent.com/88808251/133173077-d8960688-2e8f-45cb-9850-e6b1b9870cc7.png)
+![검증1](https://user-images.githubusercontent.com/88808251/133179151-31b820fe-0863-436a-9090-51b9a7f372ea.png)
 ![검증2](https://user-images.githubusercontent.com/88808251/133173230-9f45a13a-2d64-4475-99ae-87cb756e0706.png)
-
-### 모델 수정
-TBD
-
-### 비기능 요구사항에 대한 검증
-![비기능](https://user-images.githubusercontent.com/89369983/132147864-393eace5-f9fc-4540-9d22-1804e5407d4e.PNG)
-
 
 
 ## 헥사고날 아키텍처 다이어그램 도출
