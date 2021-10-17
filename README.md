@@ -1,5 +1,5 @@
 # 3 Team Project
-![rentbook](https://user-images.githubusercontent.com/89369983/131526770-d23daef7-0e18-4dff-8c56-419204bfd670.PNG)
+![rentbook]()
 ## 도서 대여관리 시스템   
 
 # Table of contents
@@ -65,7 +65,7 @@ B. 도서관리
 ![tobe](https://user-images.githubusercontent.com/89369983/132091699-2f0f9164-55da-49d5-a35f-dc6eba7eed19.PNG)
 
 ## Event Storming 결과
-* MSAEz 로 모델링한 이벤트스토밍 결과:  http://www.msaez.io/#/storming/CWH9U9ZXJmRVhWyyz88s1h12bLz1/2d59a42bf5bfa04dfeb58737179ef00f
+* MSAEz 로 모델링한 이벤트스토밍 결과: https://www.msaez.io/#/storming/sBSoKIMynLR2owUN1kjnRfJohAj2/cdf97eea37ca9195aa3030282c1c9412
 
 
 ### 이벤트 도출
